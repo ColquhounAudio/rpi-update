@@ -3,10 +3,10 @@
 set -o nounset
 set -o errexit
 
-REPO_URI=${REPO_URI:-"https://github.com/Hexxeh/rpi-firmware"}
+REPO_URI=${REPO_URI:-"https://github.com/ColquhounAudio/rpi-firmware"}
 
 UPDATE_SELF=${UPDATE_SELF:-1}
-UPDATE_URI="https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update"
+UPDATE_URI="https://raw.githubusercontent.com/ColquhounAudio/rpi-update/master/rpi-update"
 
 if [[ ${BOOT_PATH:-"unset"} == "unset" && ${ROOT_PATH:-"unset"} != "unset" ]] ||
 [[ ${BOOT_PATH:-"unset"} != "unset" && ${ROOT_PATH:-"unset"} == "unset" ]]; then
@@ -150,7 +150,7 @@ function update_sdk {
 }
 
 function show_notice {
-	local FULL_NOTICE=`eval curl -Lfs ${GITHUB_AUTH_PARAM} https://raw.githubusercontent.com/hexxeh/rpi-firmware/${FW_REV}/NOTICE.md`
+	local FULL_NOTICE=`eval curl -Lfs ${GITHUB_AUTH_PARAM} https://raw.githubusercontent.com/ColquhounAudio/rpi-firmware/${FW_REV}/NOTICE.md`
 	local NOTICE=$(echo "$FULL_NOTICE" | tail -n+2)
 	if [ -z "$NOTICE" ]; then
 		return
